@@ -25,7 +25,7 @@
                 ['2016', 43.6, 9.0],
                 ['2018', 41.9, 7.4]
             ]);
-            var options = {title: 'Evolución de la Pobreza en México (2008-2018)', curveType: 'function', legend: { position: 'bottom' }, pointSize: 5};
+            var options = {title: 'Evolución de la Pobreza en México (2008-2018)', curveType: 'function', legend: { position: 'bottom' }, pointSize: 5, annotations: {alwaysOutside: true}};
             var chart = new google.visualization.LineChart(document.getElementById('line_chart'));
             chart.draw(data, options);
         }
@@ -88,18 +88,19 @@
                 ['Tlaxcala', 42.9],
                 ['Aguascalientes', 32.0]
             ]);
-            var options = {title: 'Mapa de Pobreza por Entidad Federativa (2018)', region: 'MX', resolution: 'provinces', colorAxis: {colors: ['#f7fcf5', '#00441b']}};
+            var options = {region: 'MX', resolution: 'provinces', colorAxis: {colors: ['#f7fcf5', '#00441b']}};
             var chart = new google.visualization.GeoChart(document.getElementById('geo_chart'));
             chart.draw(data, options);
         }
     </script>
 </head>
 <body>
-    <h1>Tablero de Pobreza en México</h1>
+    <h1>Dashboard de Análisis de Pobreza en México</h1>
     <div id="line_chart" style="width: 900px; height: 500px;"></div>
     <div id="bar_chart" style="width: 900px; height: 500px;"></div>
     <div id="pie_chart" style="width: 900px; height: 500px;"></div>
     <div id="column_chart" style="width: 900px; height: 500px;"></div>
+    <h4>Mapa de Pobreza por Entidad Federativa (2018)</h4>
     <div id="geo_chart" style="width: 900px; height: 500px;"></div>
 </body>
 </html>
